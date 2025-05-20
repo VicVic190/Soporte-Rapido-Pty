@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOPORTE RAPIDO PTY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <img src="img/FOTOTEC.jpg" alt="Logo PTY Soporte Técnico">
+    SOPORTE RAPIDO PTY
+  </header>
+
+  <nav>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+    <a href="https://instagram.com/ptysoporte2" target="_blank">Instagram</a>
+  </nav>
+
+  <div class="container" id="servicios">
+    <div class="section-title">Nuestros Servicios</div>
+    <div class="services">
+      <div class="service">
+        <h3> 🧰 Servicio remoto </h3>
+        <p> Servicio Personalizado desde casa. </p>
+      </div>
+      <div class="service">
+        <h3>💻 Mantenimiento de PCs</h3>
+        <p>Limpieza, formateo, instalación de programas.</p>
+      </div>
+      <div class="service">
+        <h3>🔒 Eliminación de Virus</h3>
+        <p>Desinfectamos y optimizamos tu equipo.</p>
+      </div>
+      <div class="service">
+        <h3>🚀 Optimización de Dispositivos</h3>
+        <p>Haz que tu equipo rinda al máximo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="contacto">
+    <div class="section-title">Contáctanos</div>
+    <form onsubmit="enviarWhatsApp(); return false;">
+      <input type="text" id="nombre" placeholder="Tu nombre" required />
+      <input type="text" id="servicio" placeholder="Servicio que necesitas" required />
+      <textarea id="mensaje" rows="4" placeholder="Mensaje adicional..." required></textarea>
+      <button type="submit">Enviar por WhatsApp</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 PTY Soporte Técnico. Todos los derechos reservados.</p>
+    <div class="socials"></div>
+  </footer>
+
+  <a href="https://wa.me/50767332882" class="whatsapp-button" target="_blank" title="Chatea con nosotros en WhatsApp">💬</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
