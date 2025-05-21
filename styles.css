@@ -1,38 +1,88 @@
 /* styles.css */
+
 * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
 }
+
 body {
   background: linear-gradient(to right, #00c6ff, #0072ff);
   color: #fff;
   padding-bottom: 100px;
 }
+
 header {
   background: #002e4d;
-  padding: 40px;
+  padding: 40px 30px; /* reduce el padding lateral para espacio */
   display: flex;
   align-items: center;
-  justify-content: center;
   position: relative;
   font-size: 40px;
   font-weight: 600;
+  color: #fff;
+  gap: 20px; /* espacio entre logo y texto */
+  justify-content: flex-start;
 }
+
+/* Logo en esquina superior izquierda */
 header img {
-  position: absolute;
-  left: 25px;
-  top: 9px;
   height: 120px;
   width: auto;
+  flex-shrink: 0;
 }
+
+/* Nombre con nubecita RGB animada */
+header span.nombre-empresa {
+  position: relative;
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow:
+    0 0 5px #ff0000,
+    0 0 10px #ff0000,
+    0 0 20px #00ff00,
+    0 0 30px #00ff00,
+    0 0 40px #0000ff,
+    0 0 50px #0000ff,
+    0 0 60px #ff0000;
+  animation: glowRGB 1s linear infinite;
+  white-space: nowrap;
+}
+
+/* Animación suave RGB parpadeante */
+@keyframes glowRGB {
+  0%, 100% {
+    text-shadow:
+      0 0 5px #ff0000,
+      0 0 10px #ff0000,
+      0 0 20px #00ff00,
+      0 0 30px #00ff00,
+      0 0 40px #0000ff,
+      0 0 50px #0000ff,
+      0 0 60px #ff0000;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #ff0040,
+      0 0 20px #ff0040,
+      0 0 30px #00ff80,
+      0 0 40px #00ff80,
+      0 0 50px #0040ff,
+      0 0 60px #0040ff,
+      0 0 70px #ff0040;
+  }
+}
+
+/* Navegación */
 nav {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin: 20px;
 }
+
 nav a {
   background: #fff;
   color: #0072ff;
@@ -42,10 +92,13 @@ nav a {
   font-weight: bold;
   transition: 0.3s;
 }
+
 nav a:hover {
   background: #00c6ff;
   color: #fff;
 }
+
+/* Contenedor principal */
 .container {
   max-width: 900px;
   margin: 30px auto;
@@ -53,17 +106,22 @@ nav a:hover {
   padding: 30px;
   border-radius: 20px;
 }
+
+/* Títulos de sección */
 .section-title {
   font-size: 26px;
   margin-bottom: 20px;
   text-align: center;
 }
+
+/* Servicios */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
+
 .service {
   background: #ffffff22;
   padding: 20px;
@@ -71,26 +129,32 @@ nav a:hover {
   text-align: center;
   transition: 0.3s;
 }
+
 .service:hover {
   transform: scale(1.05);
   background: #ffffff33;
 }
+
 .service h3 {
   margin-bottom: 10px;
   font-size: 20px;
 }
+
+/* Formulario */
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
   margin-top: 20px;
 }
+
 input, textarea {
   padding: 10px;
   border: none;
   border-radius: 10px;
   font-size: 16px;
 }
+
 button {
   background: #00ffcc;
   color: #002e4d;
@@ -102,21 +166,34 @@ button {
   cursor: pointer;
   transition: 0.3s;
 }
+
 button:hover {
   background: #00e6b8;
 }
+
+/* Pie de página */
 footer {
   background: #002e4d;
   color: #fff;
   padding: 20px;
   text-align: center;
 }
+
 .socials a {
   margin: 0 10px;
   color: #fff;
   font-size: 20px;
   text-decoration: none;
 }
+
+/* Logo versión responsive */
+.Logo {
+  max-width: 135px;
+  height: auto;
+  display: block;
+}
+
+/* Botón WhatsApp flotante */
 .whatsapp-button {
   position: fixed;
   bottom: 20px;
@@ -134,3 +211,53 @@ footer {
   z-index: 1000;
   text-decoration: none;
 }
+
+/* Responsive: evita que el header se desborde en móviles */
+header img {
+  height: 90px; /* ajusta aquí a 90px o menos si quieres */
+  width: auto;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  header img {
+    height: 60px; /* para móviles más pequeño */
+  }
+}
+
+
+ header span.nombre-empresa {
+  margin-left: -10px;
+  margin-right: auto;
+  display: block; /* para que el margin auto funcione */
+  /* mantienes todo lo demás igual */
+}
+
+
+
+  #audio-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00c6ff;
+  transition: background 0.3s, color 0.3s;
+  z-index: 10000;
+}
+
+#audio-toggle:hover {
+  background: #00c6ff;
+  color: #002e4d;
+}
+
+#audio-toggle.muted {
+  color: #555;
+  box-shadow: none;
+}
+
