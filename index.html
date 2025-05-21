@@ -9,9 +9,10 @@
 </head>
 <body>
   <header>
-    <img src="img/FOTOTEC.jpg" alt="Logo PTY Soporte Técnico">
-    SOPORTE RAPIDO PTY
-  </header>
+  <img src="img/FOTOTEC.jpg" alt="Logo PTY Soporte Técnico" class="Logo" />
+  <span class="nombre-empresa">SOPORTE RAPIDO PTY</span>
+</header>
+
 
   <nav>
     <a href="#servicios">Servicios</a>
@@ -23,8 +24,8 @@
     <div class="section-title">Nuestros Servicios</div>
     <div class="services">
       <div class="service">
-        <h3> 🧰 Servicio remoto </h3>
-        <p> Servicio Personalizado desde casa. </p>
+        <h3>🧰 Servicio remoto</h3>
+        <p>Servicio personalizado desde casa.</p>
       </div>
       <div class="service">
         <h3>💻 Mantenimiento de PCs</h3>
@@ -49,7 +50,29 @@
       <textarea id="mensaje" rows="4" placeholder="Mensaje adicional..." required></textarea>
       <button type="submit">Enviar por WhatsApp</button>
     </form>
+    <div class="telefonos">
+      <p><strong>Teléfono 1:</strong> +507 6733-2882</p>
+      <p><strong>Teléfono 2:</strong> +507 6123-4567</p>
+    </div>
   </div>
+
+
+  <audio id="background-music" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+  Tu navegador no soporta audio.
+</audio>
+
+
+<!-- Botón para activar/desactivar audio -->
+<button
+ id="audio-toggle" aria-label="Toggle background music" title="Encender/Apagar música">
+  🔈
+</button>
+
+
+
+
+
 
   <footer>
     <p>&copy; 2025 PTY Soporte Técnico. Todos los derechos reservados.</p>
@@ -57,6 +80,8 @@
   </footer>
 
   <a href="https://wa.me/50767332882" class="whatsapp-button" target="_blank" title="Chatea con nosotros en WhatsApp">💬</a>
+
+  
 
   <script src="script.js"></script>
 </body>
