@@ -75,7 +75,7 @@ function mostrarMetodoPago(valor) {
   } else if (valor === 'yapi') {
     info.innerHTML = '<p>✅ Número YAPI: <strong>67332882</strong></p>';
   } else if (valor === 'tarjeta') {
-    info.innerHTML = '<p>✅ Introduzca sus datos de tarjeta de manera segura (implementación futura con pasarela de pago segura).</p>';
+    info.innerHTML = '<p>✅ Proximamente.</p>';
   } else {
     info.innerHTML = '';
   }
