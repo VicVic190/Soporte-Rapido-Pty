@@ -18,29 +18,61 @@
     <a href="#servicios">Servicios</a>
     <a href="#contacto">Contacto</a>
     <a href="https://instagram.com/ptysoporte2" target="_blank">Instagram</a>
+    <a href="https://vm.tiktok.com/ZMSNQpTe9/" target="_blank"> Tik Tok </a>
   </nav>
 
-  <div class="container" id="servicios">
-    <div class="section-title">Nuestros Servicios</div>
-    <div class="services">
-      <div class="service">
-        <h3>🧰 Servicio remoto</h3>
-        <p>Servicio personalizado desde casa.</p>
-      </div>
-      <div class="service">
-        <h3>💻 Mantenimiento de PCs</h3>
-        <p>Limpieza, formateo, instalación de programas.</p>
-      </div>
-      <div class="service">
-        <h3>🔒 Eliminación de Virus</h3>
-        <p>Desinfectamos y optimizamos tu equipo.</p>
-      </div>
-      <div class="service">
-        <h3>🚀 Optimización de Dispositivos</h3>
-        <p>Haz que tu equipo rinda al máximo.</p>
-      </div>
-    </div>
+  <section id="servicios" class="servicios">
+  <h2>💼 Nuestros Servicios</h2>
+
+  <details>
+  <summary>🖥️ Servicio Remoto Personalizado</summary>
+  <label><input type="checkbox" data-nombre="Asistencia remota básica" data-precio="5"> Asistencia remota básica – $5</label><br>
+  <label><input type="checkbox" data-nombre="Soporte remoto personalizado" data-precio="8"> Soporte remoto personalizado – Desde $8</label>
+</details>
+
+<details>
+  <summary>🧰 Mantenimiento de PC / Laptop</summary>
+  <label><input type="checkbox" data-nombre="Limpieza externa de laptop" data-precio="10"> Limpieza externa de laptop – $10</label><br>
+  <label><input type="checkbox" data-nombre="Limpieza externa de PC (torre)" data-precio="12"> Limpieza externa de PC (torre) – $12</label><br>
+  <label><input type="checkbox" data-nombre="Limpieza interna + pasta térmica (laptop)" data-precio="15"> Limpieza interna + pasta térmica (laptop) – $15</label><br>
+  <label><input type="checkbox" data-nombre="Limpieza interna + pasta térmica (PC torre)" data-precio="18"> Limpieza interna + pasta térmica (PC torre) – $18</label><br>
+  <label><input type="checkbox" data-nombre="Formateo sin respaldo" data-precio="15"> Formateo sin respaldo – $15</label><br>
+  <label><input type="checkbox" data-nombre="Formateo con respaldo" data-precio="20"> Formateo con respaldo – $20</label><br>
+  <label><input type="checkbox" data-nombre="Instalación de Windows" data-precio="10"> Instalación de Windows – $10</label><br>
+  <label><input type="checkbox" data-nombre="Instalación de programas básicos" data-precio="5"> Instalación de programas básicos – $5</label><br>
+  <label><input type="checkbox" data-nombre="Software avanzado" data-precio="8"> Software avanzado – Desde $8</label>
+</details>
+
+<details>
+  <summary>🛡️ Eliminación de Virus y Malware</summary>
+  <label><input type="checkbox" data-nombre="Análisis y desinfección básica" data-precio="8"> Análisis y desinfección básica – $8</label><br>
+  <label><input type="checkbox" data-nombre="Eliminación completa + optimización" data-precio="12"> Eliminación completa + optimización – $12</label><br>
+  <label><input type="checkbox" data-nombre="Desinfección profunda" data-precio="15"> Desinfección profunda – $15</label><br>
+  <label><input type="checkbox" data-nombre="Antivirus premium + configuración" data-precio="10"> Antivirus premium + configuración – $10</label>
+</details>
+
+<details>
+  <summary>🚀 Optimización del Dispositivo</summary>
+  <label><input type="checkbox" data-nombre="Optimización básica" data-precio="7"> Optimización básica – $7</label><br>
+  <label><input type="checkbox" data-nombre="Optimización intermedia" data-precio="12"> Optimización intermedia – $12</label><br>
+  <label><input type="checkbox" data-nombre="Optimización avanzada" data-precio="15"> Optimización avanzada – $15</label>
+</details>
+
+  <button onclick="mostrarResumen()">Ver Resumen y Total</button>
+
+  <div id="resumen"></div>
+  <div id="pago" style="display:none">
+    <h3>Selecciona Método de Pago:</h3>
+    <select onchange="mostrarMetodoPago(this.value)">
+      <option value="">-- Selecciona --</option>
+      <option value="efectivo">💵 Efectivo</option>
+      <option value="yapi">📱 YAPPY</option>
+      <option value="tarjeta">💳 Tarjeta</option>
+    </select>
+    <div id="infoPago"></div>
   </div>
+</section>
+
 
   <div class="container" id="contacto">
     <div class="section-title">Contáctanos</div>
@@ -50,11 +82,42 @@
       <textarea id="mensaje" rows="4" placeholder="Mensaje adicional..." required></textarea>
       <button type="submit">Enviar por WhatsApp</button>
     </form>
-    <div class="telefonos">
-      <p><strong>Teléfono 1:</strong> +507 6733-2882</p>
-      <p><strong>Teléfono 2:</strong> +507 6123-4567</p>
-    </div>
+
+    <div id="formContacto" style="display:none;" class="form-contacto">
+  <button onclick="cerrarContacto()" class="cerrar-btn">✖</button>
+  <h3>Formulario de Contacto</h3>
+ <!-- Botón de contacto FUERA de las secciones -->
+<button onclick="mostrarContacto()" id="btnContacto">📞 Contacto</button>
+
+<!-- Sección de SERVICIOS (debe tener este id) -->
+<section id="servicios" class="container">
+  <!-- Aquí va todo tu contenido actual de servicios -->
+</section>
+
+<!-- Sección de CONTACTO (inicialmente oculta) -->
+<section id="contacto" class="container" style="display: none;">
+  <div class="section-title">Contáctanos</div>
+  <button onclick="cerrarContacto()" class="cerrar-btn">✖ Cerrar</button>
+  <form onsubmit="enviarWhatsApp(); return false;">
+    <input type="text" id="nombre" placeholder="Tu nombre" required />
+    <input type="text" id="servicio" placeholder="Servicio que necesitas" required />
+    <textarea id="mensaje" rows="4" placeholder="Mensaje adicional..." required></textarea>
+    <button type="submit">Enviar por WhatsApp</button>
+  </form>
+  <div class="telefonos">
+    <p><strong>Teléfono 1:</strong> +507 6733-2882</p> 
+    <p><strong>Teléfono 2:</strong> +507 6176-9476</p>
   </div>
+</section>
+
+
+
+
+    <div class="telefonos">
+      <p><strong>Teléfono 1:</strong> +507 6733-2882</p> 
+      <p><strong>Teléfono 2:</strong> +507 6176-9476</p>
+    </div>
+  </div>  
 
 
   <audio id="background-music" loop>

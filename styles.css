@@ -47,7 +47,7 @@ header span.nombre-empresa {
     0 0 40px #0000ff,
     0 0 50px #0000ff,
     0 0 60px #ff0000;
-  animation: glowRGB 1s linear infinite;
+  animation: glowRGB 0.5s linear infinite;
   white-space: nowrap;
 }
 
@@ -259,5 +259,162 @@ header img {
 #audio-toggle.muted {
   color: #555;
   box-shadow: none;
+}
+
+.servicios {
+  padding: 2em;
+  background: rgba(0, 0, 0, 0.5); /* fondo semitransparente tipo glass */
+  backdrop-filter: blur(10px); /* efecto desenfoque elegante */
+  border-radius: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: #f1f1f1;
+}
+
+.servicios h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #ffffff;
+}
+
+details {
+  margin-bottom: 1em;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1em;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+details:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+details summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+label {
+  display: block;
+  margin-top: 0.5em;
+  font-size: 0.95em;
+  color: #f9f9f9;
+}
+
+button {
+  display: block;
+  margin: 1.5em auto;
+  padding: 0.75em 2em;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background: #00aaff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0077cc;
+}
+
+#resumen {
+  margin-top: 1em;
+  padding: 1em;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+}
+
+#pago {
+  #pago {
+  background: rgba(0, 0, 0, 0.4); /* fondo oscuro con transparencia */
+  color: #fff; /* texto blanco */
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+}
+
+select {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  border-radius: 6px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+}
+
+#pago select, #pago p {
+  color: #fff;
+}
+
+#pago option {
+  color: #000; /* para ver bien las opciones del dropdown */
+  background-color: #fff;
+}
+.form-contacto {
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.form-contacto button {
+  background-color: #00aaff;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+
+#btnContacto {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  z-index: 999;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cerrar-btn {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  float: right;
+  cursor: pointer;
 }
 
